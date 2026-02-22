@@ -2,24 +2,29 @@
 
 Generate and validate least-privilege access recommendations.
 
-## Domain
+## Vertical
 
 security
 
-## MVP Scope
+## Production MVP Deliverables
 
-1. Define data contracts and threat model.
-2. Build core service/API skeleton.
-3. Add observability and audit events.
-4. Implement policy gates and baseline tests.
-5. Ship a minimal demo workflow.
+1. HTTP API for health and risk assessment.
+2. Deterministic scoring service with explainable reasons.
+3. Domain-specific threat model baseline.
+4. CI gates for lint and tests.
+5. Container packaging for deployment.
 
-## Quick Start
+## Local Run
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -e .[dev]
-pytest -q
-python -m src.main
+make test
+make run
 ```
+
+## API
+
+- `GET /health`
+- `POST /v1/assess`

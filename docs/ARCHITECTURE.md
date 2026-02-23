@@ -1,17 +1,17 @@
-# Architecture - Zero Trust Policy Recommendation Agent
+# Architecture
 
-## Core components
+## Purpose
 
-1. API boundary
-2. Domain services
-3. Persistence and adapters
-4. Policy and authorization hooks
-5. Telemetry and audit logging
+zero-trust-policy-recommendation-agent evaluates risk signals, policy violations, and suspicious activity for faster incident response.
 
-## Data flow
+## Components
 
-1. Request enters API boundary.
-2. Input validation and policy checks execute.
-3. Domain service processes the request.
-4. Structured audit/metric events are emitted.
-5. Response returns with trace metadata.
+- Signal intake layer
+- Assessment engine
+- Output formatter for downstream automation
+
+## Runtime Flow
+
+1. Receive signal text/event.
+2. Compute deterministic risk score.
+3. Emit structured assessment result.

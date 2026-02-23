@@ -1,7 +1,7 @@
-from src.main import main
+from src.main import assess
 
 
-def test_main_runs(capsys):
-    main()
-    out = capsys.readouterr().out
-    assert "initialized" in out
+def test_assess_smoke() -> None:
+    result = assess("critical outage detected")
+    assert result.project
+    assert 0.0 <= result.score <= 1.0
